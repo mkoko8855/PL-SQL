@@ -27,7 +27,7 @@ DECLARE
      v_emp_email employees.EMAIL%TYPE; 
 BEGIN
     SELECT first_name, email
-    INTO /*담으려면 INTO 키워드를 사용한다*/
+    INTO /*담으려면 INTO 키워드를 사용한다 SELECT의 조회결과를 DECALRE 선언에다가 담겠다 라는 의미이다.*/
     v_emp_name, v_emp_email
     FROM employees
     WHERE employee_id = 201;
@@ -71,6 +71,9 @@ BEGIN
     (employee_id, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID)
     VALUES
     (v_emp_id+1, 'steven', 'stevenjobs', sysdate, 'CEO');
+    
+    COMMIT;
+    
 END;
 
 
